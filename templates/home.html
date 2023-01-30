@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+{{super()}}
+
+<!--style="margin-top: 15px"-->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+  <div class="carousel-inner" >
+    <div class="carousel-item active" style="overflow-y: hidden; height: 100vh">
+      <img src="https://media.istockphoto.com/photos/old-fashioned-on-the-bar-picture-id1267215016?k=20&m=1267215016&s=612x612&w=0&h=5aRAf6i3jysnOWAjGJP28WQc4CUdOaMTUaKSGtbkptg= " class="d-block w-100" alt="..." style="height:110vh; width: 95vw">
+    </div>
+
+    <div class="carousel-item">
+      <img  src="https://thumbs.dreamstime.com/b/five-colorful-gin-tonic-cocktails-wine-glasses-bar-counter-pup-restaurant-111478962.jpg" class="d-block w-100" alt="..." style="height:100vh; width: 100vw">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2018/01/Charcuterie_Darina-Kopcok.jpg?ssl=1" class="d-block w-100" alt="..." style="height:100vh; width: 100vw">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+{% endblock %}
