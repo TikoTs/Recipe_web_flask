@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Sign UP {% endblock %}
+
+{% block content %}
+{{ super() }}
+<div class="card" style="border-radius: 40px; width: 70%; margin-left: auto; margin-right: auto; margin-top: 120px; background-color: coral">
+  <div class="card-body">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-danger d-flex align-items-center" role="alert" style="border-radius: 10px" >
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"></svg>
+            <div>
+                {{ messages[0] }} Go to <a href="{{ url_for('login') }}">login page</a>.
+            </div>
+        </div>
+      {% endif %}
+      {% endwith %}
+    <form method="post" style="width:50%; margin-left: auto; margin-right: auto; margin-bottom: 80px; margin-top: 80px">
+        <input type="text" name="first_name" class="form-control" placeholder="First name" aria-label="First name" style="border-radius: 20px">
+        <input type="text" name="last_name" class="form-control" placeholder="Last name" aria-label="Last name" style="margin-top: 15px; border-radius: 20px">
+        <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username" style="margin-top: 15px; border-radius: 20px">
+        <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" style="margin-top: 15px; border-radius: 20px">
+        <button type="submit" style="margin-left: 25%;width: 50%; border-radius: 20px; background-color: black; border-color: black" class="btn btn-success mt-3">Sign Up</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}
