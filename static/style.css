@@ -1,0 +1,35 @@
+body {
+    background: white;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+
+button.btn{
+    margin-top: auto;
+}
+
+.carousel{
+    position: relative;
+    top: 0;
+}
+
+
+.navbar {
+    border: none;
+    box-shadow: none;
+    transition: background 0.7s ease-out;
+    background: transparent!important;
+    position: absolute;
+    z-index: 1030;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+
+
+

@@ -5,6 +5,33 @@
 {% block content %}
 {{ super() }}
 
+<h1 class="title" style="margin-top: 95px; text-align: center; color: coral">
+  Welcome, {{ name }}!
+</h1>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4" style="margin-top: 20px; margin-left: 30px; margin-right: 30px">
+  <div class="col">
+    <div class="card" >
+      <img src="https://static.toiimg.com/thumb/59070007.cms?width=1300&height=865" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cocktails</h5>
+        <p class="card-text">Enter cocktail name to get its recipe and ingredients.</p>
+         <a href="{{url_for('cocktail_name')}}" class="btn btn-primary" >View</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="https://img.freepik.com/free-photo/side-view-breakfast-table-with-sausages-fresh-vegetables-cheese-ham-sauces-jpg_140725-12151.jpg?t=st=1654366214~exp=1654366814~hmac=39104174f14dd35f52619d6627294da6b34a8973566e0028b497ee20d0460b36&w=740" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Meals</h5>
+        <p class="card-text">Choose meal to get its recipe and ingredients</p>
+        <a href="{{url_for('meal')}}" class="btn btn-primary">View</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
 
 
 

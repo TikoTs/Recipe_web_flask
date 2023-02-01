@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %} Meals {% endblock %}
+
+{% block content %}
+{{ super() }}
+<div class="card" style="border-radius: 40px; margin-left: 15%; margin-top: 120px; width: 70%; align-items: center; display: flex; justify-content: center; background-color: coral">
+  <div class="card-body">
+      <form method="POST">
+    <select class="form-select" name="Meals" aria-label="Default select example" style=" width: 70% ">
+  <option selected>Select meal</option>
+      {%for meal in value_name%}
+      <option value="{{meal.name}}">{{meal.name}}</option>
+      {%endfor%}
+
+</select>
+
+ <button type="submit" class="btn btn-outline-dark pull-left" style="margin-left: 75%; margin-top:-65px">Search</button>
+    </form>
+
+  </div>
+</div>
+    {% if status %}
+  <div class="row row-cols-1 row-cols-md-2 g-4" style="margin-top: 20px; margin-left: 30px; margin-right: 30px" >
+  <div class="col">
+    <div class="card" style="left: 50%; margin-top: 5em; margin: 0 auto" >
+      <img src= {{img}} class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3 class="card-title">{{name}}</h3>
+          <br>
+          <h5 class="ingr">Ingredients</h5>
+          <p class="card-text">
+              <p>{{ingredients.replace("'", '')}}</p>
+          </p>
+          <h5 class="step">Recipe Steps</h5>
+        <p class="card-text">
+
+            {%for each in steps%}
+          <p>{{each.replace('"', '').replace("'", '')}}</p>
+            {% endfor %}
+
+
+        </p>
+         <a href="{{url_for('meal')}}" class="btn btn-primary" >Choose Again</a>
+          <br>
+          <a href="{{url_for('food')}}" class="btn btn-primary" >Go Back</a>
+      </div>
+    </div>
+  </div>
+  </div>
+    {% endif %}
+
+{%endblock %}

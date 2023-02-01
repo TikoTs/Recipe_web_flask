@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %} Cocktail {% endblock %}
+
+{% block content %}
+{{ super() }}
+<div class="card" style="border-radius: 40px; width: 70%; height: 100px; margin-left: auto; margin-right: auto; margin-top: 120px; background-color: coral">
+  <div class="card-body">
+
+    <form method="POST" style="width:50%; margin-left: auto; margin-right: auto; margin-bottom: 30%;">
+        <input type="text" name="cocktail_name" class="form-control mb-3 mt-3" placeholder="Enter Cocktail Name" style="border-radius: 20px;">
+       <a href="{{url_for('cocktail_name')}}">
+        <button type="submit" class="btn btn-outline-dark pull-left" style="margin-left: 101%; margin-top:-95px">Search</button>
+        </a>
+    </form>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-danger d-flex align-items-center" role="alert" style="border-radius: 10px; margin-top: -280px" >
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+                {{ messages[0] }}
+            </div>
+        </div>
+      {% endif %}
+      {% endwith %}
+
+  </div>
+</div>
+
+    {% if status %}
+  <div class="row row-cols-1 row-cols-md-2 g-4" style="margin-top: 20px; margin-left: 30px; margin-right: 30px" >
+  <div class="col">
+    <div class="card" style="left: 50%; margin-top: 5em; margin: 0 auto" >
+      <img src= {{img}} class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3 class="card-title">{{name}}</h3>
+          <br>
+          <h5 class="ingr">Ingredients</h5>
+          <p class="card-text">
+              {{ingredients.replace("'", '')}}
+          </p>
+          <h5 class="step">Recipe Steps</h5>
+        <p class="card-text">
+
+            {%for each in steps%}
+          <p>{{each.replace('"', '').replace("'", '')}}</p>
+            {% endfor %}
+
+
+        </p>
+         <a href="{{url_for('food')}}" class="btn btn-primary" >Go Back</a>
+      </div>
+    </div>
+  </div>
+  </div>
+    {% endif %}
+
+{% endblock %}
