@@ -88,7 +88,7 @@ def logout():
 
 @app.route('/food')
 def food():
-   return render_template('food.html')
+   return render_template('food.html', name=current_user.first_name)
 
 
 @app.route('/signup', methods=['POST', 'GET'])
